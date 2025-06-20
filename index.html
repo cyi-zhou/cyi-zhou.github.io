@@ -76,11 +76,18 @@
                 font-family: 'Inter';
                 margin: 0 0 15px 0;
             }
-
+            .content-wrapper {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+            }
             .tabs {
                 position: absolute;
                 top: 38%;
-                right: -141px;
+                right: -140px;
                 transform: translateY(-50%);
                 display: flex;
                 flex-direction: column;
@@ -97,9 +104,10 @@
                 font-size: 16px;
                 font-weight: 550;
                 letter-spacing: 2px;
-                box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+                box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
                 transform: rotate(90deg);
-                transform-origin: center left;                
+                transform-origin: center left;
+                transition: background-color 0.3s, transform 0.2s;
             }
             .tab:hover {
                 background-color: #a260c1;
@@ -115,6 +123,9 @@
                 border: none;
                 font-family: 'Inter';
                 font-size: 16px;
+                height: 35.5px;
+                margin-bottom: 4px;
+                margin-left: 10px;
                 transition: background-color 0.3s, transform 0.2s;
             }
             .button:hover {
@@ -129,11 +140,11 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 10px;
+                gap: 15px;
                 margin-top: 20px;
             }
 
-            @media (max-width: 788px) {
+            @media (max-width: 888px) {
                 .rectangle-container {
                     width: 445px;
                     transform-origin: center;
@@ -185,6 +196,7 @@
                     border-radius: 5px;
                     padding: 8px 15px;
                     font-size: 14px;
+                    box-shadow: none;
                 }
 
                 .social-buttons {
@@ -245,10 +257,10 @@
                     <div class="button-container">
                         <div class="social-buttons">
                             <a href="https://github.com/cyi-zhou" class="image-link";>
-                                <img src="images/github.png" alt="GitHub" style= "width: 40px">
+                                <img src="images/github.png" alt="GitHub" style= "width: 48px; height: 48px">
                             </a>
                             <a href="https://www.linkedin.com/in/celina-zhou-23b81520b/" class="image-link">
-                                <img src="images/linkedin.png" alt="LinkedIn" style= "width: 40px">
+                                <img src="images/linkedin.png" alt="LinkedIn" style= "width: 40px; height: 40px">
                             </a>
                             <a href="mailto:zhouyi.celina@gmail.com">
                                 <button class="button">
@@ -256,12 +268,13 @@
                                 </button>
                             </a>
                         </div>
-                        <div class="tabs">
-                            <div class="tab">HOME</div>
-                            <div class="tab">SKILLS</div>
-                            <div class="tab">PROJECTS</div>
-                        </div>
                     </div>
+                </div>
+                <div class="tabs">
+                    <div class="tab">HOME</div>
+                    <div class="tab">SKILLS</div>
+                    <div class="tab">PROJECTS</div>
+                </div>
                 </div>
             </div>
         </div>
