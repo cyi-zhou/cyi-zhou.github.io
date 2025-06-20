@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Celina's Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="images/favicon.ico" href="images/favicon.ico">
+        <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+        <style>
+            body {
+                background-color: #f5dedf;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                min-height: 100vh;
+                box-sizing: border-box;
+            }
+
+            .rectangle-container {
+                background-color: #f8f6f2;
+                border-radius: 15px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+                padding: 45px 50px;
+                width: 100%;
+                max-width: 800px;
+                max-height: 800px;
+                display: flex;
+                flex-direction: column; 
+                gap: 20px; 
+                position: relative; 
+                margin-right: 60px;
+                margin-left: 15px;
+            }
+            .rectangle {
+                display: inline-block;
+                padding: 14px; 
+                background: linear-gradient(to top, #f2c6c7, #c291d9);
+                border-radius: 50%;
+                box-sizing: border-box;
+            }
+            .rectangle img {
+                width: 350px;
+                height: 350px;
+                border-radius: 50%;
+                display: block;
+            }
+
+            .header-container {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+                text-align: center;
+            }
+            .header-text-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                max-width: 400px;
+            }
+            .header-text-container h1 {
+                font-family: 'Inter';
+                margin: 0 0 15px 0;
+                font-size: 29px;
+            }
+            .header-text-container h2 {
+                font-family: 'Inter';
+                margin: 0 0 15px 0;
+                font-size: 21px;                
+            }
+            .header-text-container p {
+                font-family: 'Inter';
+                margin: 0 0 15px 0;
+            }
+
+            .tabs {
+                position: absolute;
+                top: 38%;
+                right: -141px;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                gap: 100px;
+            }
+            .tab {
+                background-color: #c391da; 
+                color: #f8f6f2;
+                padding: 10px;
+                border-radius: 5px 5px 0 0;
+                cursor: pointer;
+                text-align: center;
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 550;
+                letter-spacing: 2px;
+                box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+                transform: rotate(90deg);
+                transform-origin: center left;                
+            }
+            .tab:hover {
+                background-color: #a260c1;
+            }
+
+            .button {
+                text-decoration: none;
+                background-color: #c391da;
+                color: #f8f6f2;
+                padding: 10px 30px;
+                cursor: pointer;
+                border-radius: 5px;
+                border: none;
+                font-family: 'Inter';
+                font-size: 16px;
+                transition: background-color 0.3s, transform 0.2s;
+            }
+            .button:hover {
+                background-color: #a260c1; 
+            }
+
+            .image-link{
+                text-decoration: none;
+            }
+
+            .social-buttons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            @media (max-width: 788px) {
+                .rectangle-container {
+                    width: 445px;
+                    transform-origin: center;
+                    transform: scale(1);
+                    margin: 0 auto;
+                    padding: 30px;
+                }
+
+                .header-container {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 30px;
+                    margin-top: 0;
+                }
+
+                .rectangle img {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .header-text-container {
+                    max-width: 100%;
+                }
+
+                .header-text-container h1 {
+                    font-size: 24px;
+                }
+
+                .header-text-container h2 {
+                    font-size: 18px;
+                }
+
+                .header-text-container p {
+                    font-size: 14px;
+                }
+
+                .tabs {
+                    position: static;
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 10px;
+                    transform: none;
+                }
+
+                .tab {
+                    transform: none;
+                    border-radius: 5px;
+                    padding: 8px 15px;
+                    font-size: 14px;
+                }
+
+                .social-buttons {
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+
+                .button {
+                    padding: 8px 20px;
+                    font-size: 14px;
+                }
+
+                .image-link img {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+
+            @media (max-width: 500px) {
+                .rectangle-container {
+                    transform: scale(0.9);
+                }
+            }
+
+            @media (max-width: 400px) {
+                .rectangle-container {
+                    transform: scale(0.8);
+                }
+            }
+
+            @media (max-width: 350px) {
+                .rectangle-container {
+                    transform: scale(0.7);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="rectangle-container">
+            <div class="header-container">
+                <div class="rectangle">
+                    <img src="images/IMG_6644.jpeg" alt="Profile Picture">
+                </div>
+                <div class="header-text-container">
+                    <h1>Hi, my name's Celina ʕ•-•ʔ</h1>
+                    <h2>and this is my corner of the internet!</h2>
+                    <p>
+                        I'm a student at the University of Guelph studying biomedical engineering, with professional
+                        experience in AI computer vision. I've learned everything from physiology to electromechanics (and Spanish!),
+                        and I made this site as a way to blend my love for graphic design into engineering.
+                    </p>
+                    <p>
+                        I'm interested in all things AI, biomedical imaging and robotics, neuroengineering, and full-stack development.
+                    </p>
+                    <p>
+                        Feel free to check me out anywhere down below!
+                    </p>
+                    <div class="button-container">
+                        <div class="social-buttons">
+                            <a href="https://github.com/cyi-zhou" class="image-link";>
+                                <img src="images/github.png" alt="GitHub" style= "width: 40px">
+                            </a>
+                            <a href="https://www.linkedin.com/in/celina-zhou-23b81520b/" class="image-link">
+                                <img src="images/linkedin.png" alt="LinkedIn" style= "width: 40px">
+                            </a>
+                            <a href="mailto:zhouyi.celina@gmail.com">
+                                <button class="button">
+                                    Email me!
+                                </button>
+                            </a>
+                        </div>
+                        <div class="tabs">
+                            <div class="tab">HOME</div>
+                            <div class="tab">SKILLS</div>
+                            <div class="tab">PROJECTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
