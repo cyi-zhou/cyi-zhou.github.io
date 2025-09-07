@@ -2,41 +2,41 @@
 <html lang="en">
     <head>
         <title>Celina's Website</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="images/favicon.ico" href="images/favicon.ico">
-        <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/images/favicon.png" type="image/png" />
+        <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
 
         <style>
             body {
                 background-color: #f5dedf;
-                margin: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                margin: 1000;
                 padding: 20px;
-                min-height: 100vh;
                 box-sizing: border-box;
             }
-
+            .page-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
             .rectangle-container {
                 background-color: #f8f6f2;
                 border-radius: 15px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
                 padding: 45px 50px;
                 width: 100%;
                 max-width: 800px;
                 max-height: 800px;
                 display: flex;
-                flex-direction: column; 
-                gap: 20px; 
-                position: relative; 
-                margin-right: 60px;
-                margin-left: 15px;
+                flex-direction: column;
+                gap: 20px;
+                position: relative;
+                margin: 0 auto;
             }
             .rectangle {
                 display: inline-block;
-                padding: 14px; 
+                padding: 14px;
                 background: linear-gradient(to top, #f2c6c7, #c291d9);
                 border-radius: 50%;
                 box-sizing: border-box;
@@ -46,6 +46,10 @@
                 height: 350px;
                 border-radius: 50%;
                 display: block;
+            }
+            .rectangle-container.skills {
+                margin-top: 50px;
+                align-items: center;
             }
 
             .header-container {
@@ -60,7 +64,6 @@
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-                max-width: 400px;
             }
             .header-text-container h1 {
                 font-family: 'Inter';
@@ -70,58 +73,73 @@
             .header-text-container h2 {
                 font-family: 'Inter';
                 margin: 0 0 15px 0;
-                font-size: 21px;                
+                font-size: 21px;
             }
             .header-text-container p {
                 font-family: 'Inter';
                 margin: 0 0 15px 0;
             }
-
+            .content-wrapper {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+            }
             .tabs {
                 position: absolute;
-                top: 38%;
-                right: -141px;
+                top: 50%;
+                right: -100px;
                 transform: translateY(-50%);
                 display: flex;
                 flex-direction: column;
-                gap: 100px;
+                gap: 110px;
             }
             .tab {
-                background-color: #c391da; 
+                background-color: #c391da;
                 color: #f8f6f2;
                 padding: 10px;
-                border-radius: 5px 5px 0 0;
+                border-radius: 5px;
                 cursor: pointer;
                 text-align: center;
                 font-family: 'Inter';
                 font-size: 16px;
                 font-weight: 550;
                 letter-spacing: 2px;
-                box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+                box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
                 transform: rotate(90deg);
-                transform-origin: center left;                
+                transform-origin: center;
+                transition: background-color 0.3s, transform 0.2s;
             }
             .tab:hover {
                 background-color: #a260c1;
+                scale: 1.1;
             }
 
             .button {
                 text-decoration: none;
                 background-color: #c391da;
+                display: flex;
                 color: #f8f6f2;
+                align-items: center;
+                justify-content: center;
                 padding: 10px 30px;
                 cursor: pointer;
                 border-radius: 5px;
                 border: none;
                 font-family: 'Inter';
                 font-size: 16px;
+                height: 36px;
+                margin-bottom: 5px;
+                margin-left: 10px;
                 transition: background-color 0.3s, transform 0.2s;
             }
             .button:hover {
-                background-color: #a260c1; 
+                background-color: #a260c1;
             }
 
-            .image-link{
+            .image-link {
                 text-decoration: none;
             }
 
@@ -129,11 +147,52 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 10px;
+                gap: 15px;
                 margin-top: 20px;
             }
 
-            @media (max-width: 788px) {
+            .skills-container {
+                text-align: center;
+            }
+
+            .skills-container ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 5px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .skill-button {
+                background-color: #f9ddea;
+                color: #21202e;
+                padding: 7px 15px;
+                border-radius: 35px;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                transition: background-color 0.3s, transform 0.2s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+
+            .skill-button img {
+                margin-right: 10px;
+                object-fit: contain;
+            }
+
+            .skill-button:hover {
+                background-color: #f3c7d4;
+                transform: scale(1.05);
+            }
+
+            @media (max-width: 888px) {
                 .rectangle-container {
                     width: 445px;
                     transform-origin: center;
@@ -172,7 +231,7 @@
 
                 .tabs {
                     position: static;
-                    margin-top: 20px;
+                    margin-top: 0px;
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
@@ -185,6 +244,7 @@
                     border-radius: 5px;
                     padding: 8px 15px;
                     font-size: 14px;
+                    box-shadow: none;
                 }
 
                 .social-buttons {
@@ -223,47 +283,110 @@
         </style>
     </head>
     <body>
-        <div class="rectangle-container">
-            <div class="header-container">
-                <div class="rectangle">
-                    <img src="images/IMG_6644.jpeg" alt="Profile Picture">
-                </div>
-                <div class="header-text-container">
-                    <h1>Hi, my name's Celina ʕ•-•ʔ</h1>
-                    <h2>and this is my corner of the internet!</h2>
-                    <p>
-                        I'm a student at the University of Guelph studying biomedical engineering, with professional
-                        experience in AI computer vision. I've learned everything from physiology to electromechanics (and Spanish!),
-                        and I made this site as a way to blend my love for graphic design into engineering.
-                    </p>
-                    <p>
-                        I'm interested in all things AI, biomedical imaging and robotics, neuroengineering, and full-stack development.
-                    </p>
-                    <p>
-                        Feel free to check me out anywhere down below!
-                    </p>
-                    <div class="button-container">
-                        <div class="social-buttons">
-                            <a href="https://github.com/cyi-zhou" class="image-link";>
-                                <img src="images/github.png" alt="GitHub" style= "width: 40px">
-                            </a>
-                            <a href="https://www.linkedin.com/in/celina-zhou-23b81520b/" class="image-link">
-                                <img src="images/linkedin.png" alt="LinkedIn" style= "width: 40px">
-                            </a>
-                            <a href="mailto:zhouyi.celina@gmail.com">
-                                <button class="button">
+        <div class="page-container">
+            <div class="rectangle-container" id="home">
+                <div class="header-container">
+                    <div class="rectangle">
+                        <img src="images/IMG_6644.jpeg" alt="Profile Picture" />
+                    </div>
+                    <div class="header-text-container">
+                        <h1>Hi, my name's Celina ʕ•-•ʔ</h1>
+                        <h2>and this is my corner of the internet!</h2>
+                        <p>
+                            I'm a student at the University of Guelph studying biomedical engineering, with professional
+                            experience in AI computer vision. I've learned everything from physiology to electromechanics (and Spanish!),
+                            and I made this site as a way to blend my love for graphic design into engineering.
+                        </p>
+                        <p>
+                            I'm interested in all things <b>AI, femtech, biomedical imaging and robotics, neuroengineering, and full-stack development.</b>
+                        </p>
+                        <p>Feel free to check me out anywhere down below!</p>
+                        <div class="button-container">
+                            <div class="social-buttons">
+                                <a href="https://github.com/cyi-zhou" class="image-link">
+                                    <img src="images/github.png" alt="GitHub" style="width: 48px; height: 48px" />
+                                </a>
+                                <a href="https://www.linkedin.com/in/celina-zhou-23b81520b/" class="image-link">
+                                    <img src="images/linkedin.png" alt="LinkedIn" style="width: 40px; height: 40px" />
+                                </a>
+                                <button
+                                    class="button"
+                                    onclick="window.location.href='mailto:zhouyi.celina@gmail.com'"
+                                >
                                     Email me!
                                 </button>
-                            </a>
+                            </div>
                         </div>
-                        <div class="tabs">
-                            <div class="tab">HOME</div>
-                            <div class="tab">SKILLS</div>
-                            <div class="tab">PROJECTS</div>
-                        </div>
+                    </div>
+                    <div class="tabs">
+                        <div class="tab" data-target="home">HOME</div>
+                        <div class="tab" data-target="skills">SKILLS</div>
+                        <div class="tab" data-target="projects">PROJECTS</div>
                     </div>
                 </div>
             </div>
+
+            <div class="rectangle-container skills" id="skills">
+                <div class="header-text-container">
+                    <h1>Some of my skills!</h1>
+                    <div class="skills-container">
+                        <ul>
+                            <li class="skill-button">
+                                <img src="images/python.png" width="25px" />Python
+                            </li>
+                            <li class="skill-button">
+                                <img src="images/C.png" width="25px" />C
+                            </li>
+                            <li class="skill-button">
+                                <img src="images/javascript.png" width="25px" />JavaScript
+                            </li>                        
+                            <li class="skill-button">
+                                <img src="images/html.png" width="25px" />HTML
+                            </li>
+                            <li class="skill-button">
+                                <img src="images/css.png" height="25px" />CSS
+                            </li>
+                            <li class="skill-button">
+                                <img src="images/flask.png" height="25px" />Flask
+                            </li>
+                            <li class="skill-button">
+                                <img src="images/numpy.png" width="25px" />NumPy
+                            </li>
+                            <li class="skill-button">
+                                <img src="images/Sql.png" height="25px" />SQL
+                            </li>
+                            <li class="skill-button">
+                                <img src="images/matplotlib.png" width="25px" />Matplotlib
+                            </li>
+                            <li class="skill-button">
+                                <img src="images/matlab.png" width="25px" />MATLAB
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rectangle-container skills" id="projects">
+                <div class="header-text-container">
+                    <h1>Some of my projects!</h1>
+                    <p>currently under construction 🧠🛠</p>
+                </div>
+            </div>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const tabs = document.querySelectorAll('.tab');
+                tabs.forEach((tab) => {
+                    tab.addEventListener('click', () => {
+                        const targetId = tab.getAttribute('data-target');
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
